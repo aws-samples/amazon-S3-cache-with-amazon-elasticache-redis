@@ -4,8 +4,6 @@
 import boto3
 import constants
 
-### Required: update S3 bucket information ###
-
 s3 = boto3.resource('s3')
 
 #Iterate through all created files and delete them
