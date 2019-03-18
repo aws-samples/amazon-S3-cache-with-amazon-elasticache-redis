@@ -12,7 +12,7 @@ These examples are also references in the following blog:TBD which provide backg
 
 ## Setup and Build
 
-1. Upon CFN completion, take note of the generated S3 Bucket name and the ElastiCache Redis endpoint. Then navigate to AWS Cloud9 and open the 'S3RedisCache' environment.
+1. Upon CFN completion, take note of the generated S3 Bucket name and the ElastiCache Redis endpoint. Then navigate to AWS Cloud9 and open the **S3RedisCache** environment.
 2. Within the AWS Cloud9 environment, open (+) a new terminal and clone this repository:
 
    ```git clone repo```
