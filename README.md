@@ -12,15 +12,15 @@ These examples are also referenced in the following blog:TBD which provide backg
 
 ## Setup and Build
 
-1. Upon CFN completion, take note of the generated S3 Bucket name and the ElastiCache Redis endpoint. Then navigate to AWS Cloud9 and open the **S3RedisCache** environment.
+1. Upon CFN completion, take note of the generated S3 Bucket name and the ElastiCache Redis endpoint within the cloudformation outputs tab. Then navigate to AWS Cloud9 and open the **S3RedisCache** IDE environment.
 
 2. Within the AWS Cloud9 environment, open (+) a new terminal and clone this repository:
 
-   ```git clone repo```
+   ```git clone git@github.com:aws-samples/amazon-S3-cache-with-amazon-elasticache-redis.git``` 
 
-3. Navigate to the downloaded setup directory, run the following script to further prepare your environment:
+3. Navigate to the downloaded setup directory (/amazon-S3-cache-with-amazon-elasticache-redis/setup) and run the following script to further prepare your environment:
  
-   ```sh S3RedisPerformanceTestSetup.sh ```
+   ```sh s3_redis_project_setup.sh  ```
 
  4. Navigate to the resources directory and edit the constants.py script. Update the following properties with your launched resources: 
 
