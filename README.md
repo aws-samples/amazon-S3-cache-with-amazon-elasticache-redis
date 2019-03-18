@@ -22,7 +22,7 @@ These examples are also referenced in the following blog:TBD which provide backg
  
    ```sh s3_redis_project_setup.sh  ```
 
- 4. Navigate to the resources directory and edit the constants.py script. Update the following properties with your launched resources: 
+ 4. Navigate to the resources directory (amazon-S3-cache-with-amazon-elasticache-redis/resources) and update the following properties within **constants.py**. Provide the generated resource values you captured in the cloudformation outputs: 
 
    ```
       redishost="" (leave out the port)
@@ -32,17 +32,17 @@ These examples are also referenced in the following blog:TBD which provide backg
 
  6. Next run **query_redis.py** and **query_S3.py** and compare the generated latency. 
 
- You will notice a huge improvement from querying redis as opposed to S3. This performance test is intended to be lightweight and only for purposes to illustrate performance gains with caching. An example comparison between the two services in milliseconds is as follows:
+ You will notice a significant performance improvement when querying redis vs S3. This performance test is intended to be lightweight and only for illustration purposes. Your results may slightly vary based on your environment. An example comparison between the two services in milliseconds is as follows:
 
  ![latency](images/latency.jpg)
 
 ## Lazy-load example
 
-A common caching technique is to leverage lazy loading. This approach assumes data is cached and if not, retrieves data from the origin data source, then caches the data future requests. In order to illustrate this example we must first flush the redis cache.
+A common caching technique often used is lazy loading. This approach assumes data is cached and if not, retrieves data from the origin data source, then caches the data future requests. In order to illustrate this example we must first flush the redis cache.
 
 1. run **flush_redis.py** (this deletes all your keys)
 
-2. Navigate to examples/lazyload and run **lazy_load.py** . You should notice a cache MISS upon first run. Run it again and the following request will return a cache HIT.
+2. Next run **lazy_load.py** found within the following directory (amazon-S3-cache-with-amazon-elasticache-redis/examples/lazyload). Upon first run, you should notice a cache MISS upon first run. Run it again and the following request will return a cache HIT.
 
 ## Terminate your environment
 
