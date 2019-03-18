@@ -27,9 +27,9 @@ These examples are also references in the following blog:TBD which provide backg
       redishost="" (leave out the port)
       S3bucket= "" 
    ```
- 5. Next run load_data.py. This will generate and load 100 objects into both Amazon S3 and Amazon ElastiCache for Redis
+ 5. Next run **load_data.py**. This will generate and load 100 objects into both Amazon S3 and Amazon ElastiCache for Redis
 
- 6. Next run 'query_redis.py' and 'query_S3.py' and compare the generated latency. 
+ 6. Next run **query_redis.py** and **query_S3.py** and compare the generated latency. 
 
  You will notice a huge improvement from querying redis as opposed to S3. This performance test is intended to be lightweight and only for purposes to illustrate performance gains with caching. An example comparison between the two services in milliseconds is as follows:
 
@@ -39,15 +39,15 @@ These examples are also references in the following blog:TBD which provide backg
 
 A common caching technique is to leverage lazy loading. This approach assumes data is cached and if not, retrieves data from the origin data source, then caches the data future requests. In order to illustrate this example we must first flush the redis cache.
 
-1. run flush_redis.py (this deletes all your keys)
+1. run **flush_redis.py** (this deletes all your keys)
 
-2. Navigate to examples/lazyload and run lazy_load.py. You should notice a cache MISS upon first run. Run it again and the following request will return a cache HIT.
+2. Navigate to examples/lazyload and run **lazy_load.py** . You should notice a cache MISS upon first run. Run it again and the following request will return a cache HIT.
 
 ## Terminate your environment
 
 Upon running these examples, terminate your environment by the following steps:
 
-1. run delete_S3_objects.py (this deletes all the generated S3 objects)
+1. run **delete_S3_objects.py** (this deletes all the generated S3 objects)
 
 2. Within the AWS CloudFormation console, delete the stack you launched. 
  
