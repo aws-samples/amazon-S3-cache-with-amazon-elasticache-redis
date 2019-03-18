@@ -42,7 +42,7 @@ A common caching technique often used is lazy loading. This approach assumes dat
 
 1. run **flush_redis.py** (this deletes all your keys)
 
-2. Next run **lazy_load.py** found within the following directory (amazon-S3-cache-with-amazon-elasticache-redis/examples/lazyload). Upon first run, you should notice a cache MISS upon first run. Run it again and the following request will return a cache HIT.
+2. Next run **lazy_load.py** found within the following directory (amazon-S3-cache-with-amazon-elasticache-redis/examples/lazyload). Upon first run, you will notice a cache MISS because the object was not initially cached in redis. Run the script again and you will now notice a cache HIT since the object was set into redis after the initial cache miss. 
 
 ## Terminate your environment
 
