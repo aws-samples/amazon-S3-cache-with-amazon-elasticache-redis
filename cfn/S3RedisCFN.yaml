@@ -55,7 +55,7 @@ Resources:
       Description: Amazon S3 Input bucket for AWS ElastiCache Workshop
 
 Outputs:
-  ElastiCacheRedisEndpoint:
+  RedisHost:
     Description: ElastiCache Endpoint
     Value:
       Fn::GetAtt:
@@ -71,7 +71,7 @@ Outputs:
     Description: ElastiCache SecurityGroup Id
     Value:
       Ref: RedisClusterSecurityGroup 
-  S3DataBucket:
+  S3Bucket:
     Description: 'S3 Bucket Name'
     Value:
       Ref: S3Bucket
