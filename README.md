@@ -30,9 +30,9 @@ These examples are also referenced in the following blog:TBD which provide backg
    ```
  5. Next run **load_data.py**. This will generate and load 100 objects into both Amazon S3 and Amazon ElastiCache for Redis
 
- 6. Next run **query_redis.py** and **query_S3.py** and compare the generated latency. 
+ 6. Next run **query_redis.py** and **query_S3.py** and compare the generated latency in microseconds. 
 
- You will notice a significant performance improvement when querying redis vs S3. This performance test is intended to be lightweight and only for illustration purposes. Your results may slightly vary based on your environment. An example comparison between the two services in milliseconds is as follows:
+ You will notice a significant performance improvement when querying redis vs S3. This performance test is intended to be lightweight and only for illustration purposes. Your results may slightly vary based on your environment. An example comparison between the two services in milliseconds is as follows: 
 
  ![latency](images/latency.jpg)
 
