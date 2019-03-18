@@ -6,7 +6,7 @@ These examples are also references in the following blog:TBD which provide backg
 
 ## Deployment
 
-1. Download and run the following CFN template with AWS CloudFormation: [cfn/S3RedisCFN.yaml](https://raw.githubusercontent.com/aws-samples/blah/master/cfn/S3RedisCFN.yaml)
+1. Download and run the following CFN template with AWS CloudFormation: [cfn/S3RedisCFN.yaml](https://raw.githubusercontent.com/aws-samples/amazon-S3-cache-with-amazon-elasticache-redis/master/cfn/S3RedisCFN.yaml)
 
 2. Upon running the CFN, you will be prompted to enter a subnet to launch AWS Cloud9 and Amazon ElastiCache in. Enter a subnet id to use and then click next, next, create. (Note: this step ensures that both services are running within the same availability zone for optimal performance. You can find your subnet ids within the Amazon VPC console.)
 
