@@ -2,17 +2,17 @@
 
 This sample project demonstrates how you can cache [Amazon S3](https://aws.amazon.com/s3/) objects with [Amazon ElastiCache for Redis](https://aws.amazon.com/elasticache/redis/) . This project also uses [AWS CloudFormation](https://aws.amazon.com/cloudformation/) & [AWS Cloud9](https://aws.amazon.com/cloud9/) as means to deploy, build and run this tutorial, although you can run this in your own environments as well.
 
-These examples are also referenced in the following blog:TBD which provide background and context to this project. It is recommended to read the blog as a pre-requisite.
+These examples are also referenced in the following blog:TBD which provide background and context to this project. It is recommended to read the blog as a prerequisite.
 
 ## Deployment
 
-1. Download from github, then run (upload) the following CFN template with AWS CloudFormation: [cfn/S3RedisCFN.yaml](https://raw.githubusercontent.com/aws-samples/amazon-S3-cache-with-amazon-elasticache-redis/master/cfn/S3RedisCFN.yaml)
+1. Download from github, then run the following CFN template with AWS CloudFormation: [cfn/S3RedisCFN.yaml](https://raw.githubusercontent.com/aws-samples/amazon-S3-cache-with-amazon-elasticache-redis/master/cfn/S3RedisCFN.yaml)
 
 2. Upon running the CFN, you will be prompted to enter a Subnet Id for AWS Cloud9 and Amazon ElastiCache to be launched in. Enter a subnet id to use and then click next, next, create. (Note: This step ensures that both services are running within the same availability zone for optimal performance. You can find your subnet ids within the Amazon VPC console.)
 
 ## Setup and Build
 
-1. Upon CFN completion, take note of the generated S3 Bucket name and the ElastiCache Redis endpoint within the cloudformation outputs tab. Then navigate to AWS Cloud9 and open the **S3RedisCache** IDE environment.
+1. Upon CFN completion, take note of the generated S3 Bucket name and the Redis endpoint within the cloudformation outputs tab. Then navigate to AWS Cloud9 and open the **S3RedisCache** IDE environment.
 
 2. Within the AWS Cloud9 environment, open (+) a new terminal and clone this repository:
 
