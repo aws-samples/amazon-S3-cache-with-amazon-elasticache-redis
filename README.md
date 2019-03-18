@@ -48,7 +48,7 @@ A common caching technique often used is lazy loading. This approach assumes dat
 
 Upon running these examples, terminate your environment by the following steps:
 
-1. run **delete_S3_objects.py** (this deletes all the generated S3 objects)
+1. run **delete_S3_objects.py** within the (amazon-S3-cache-with-amazon-elasticache-redis/resources) directory. Thsi will delete all your generated S3 Objects.
 
 2. Within the AWS CloudFormation console, delete the stack you launched. 
  
