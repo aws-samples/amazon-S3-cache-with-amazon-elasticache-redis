@@ -1,0 +1,78 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Amazon S3 & Amazon ElastiCache Redis CFN'
+##########################################################################
+
+Parameters:
+  SubnetID:
+    Description: 'The subnet to be used with Amazon ElastiCache and AWS Cloud9'
+    Type: String    
+
+Resources:
+
+  Cloud9:
+    Type: "AWS::Cloud9::EnvironmentEC2"
+    Properties:
+      Description: "Cloud9 environment for workshop"
+      Name: "S3RedisCache"
+      InstanceType: c4.large
+      SubnetId: !Ref SubnetID
+      AutomaticStopTimeMinutes: 15 
+
+  ElastiCacheSubnetGroup:
+    Type: AWS::ElastiCache::SubnetGroup
+    Properties:
+      Description: Cache Subnet Group
+      SubnetIds:
+      - !Ref SubnetID
+
+  RedisClusterSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupName: Redis-S3-Test
+      GroupDescription: ElastiCache Redis Security Group
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          CidrIp: 0.0.0.0/0
+          FromPort: 6379
+          ToPort: 6379
+ 
+  RedisCluster:
+    Type: AWS::ElastiCache::CacheCluster
+    Properties:
+      CacheSubnetGroupName:
+        Ref: ElastiCacheSubnetGroup
+      CacheNodeType: cache.m5.xlarge       
+      ClusterName: 'Redis-S3-Test'
+      VpcSecurityGroupIds:
+      - Fn::GetAtt:
+        - RedisClusterSecurityGroup
+        - GroupId
+      Engine: redis
+      NumCacheNodes: '1'
+
+  S3Bucket:
+      Type: 'AWS::S3::Bucket'
+      Description: Amazon S3 Input bucket for AWS ElastiCache Workshop
+
+Outputs:
+  ElastiCacheRedisEndpoint:
+    Description: ElastiCache Endpoint
+    Value:
+      Fn::GetAtt:
+      - RedisCluster
+      - RedisEndpoint.Address
+  ElastiCachePort:
+    Description: ElastiCache Port
+    Value:
+      Fn::GetAtt:
+      - RedisCluster
+      - RedisEndpoint.Port 
+  ElastiCacheSG:
+    Description: ElastiCache SecurityGroup Id
+    Value:
+      Ref: RedisClusterSecurityGroup 
+  S3DataBucket:
+    Description: 'S3 Bucket Name'
+    Value:
+      Ref: S3Bucket
+ 
