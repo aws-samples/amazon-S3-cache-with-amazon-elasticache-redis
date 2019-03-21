@@ -13,9 +13,9 @@ i = 0
 while i < 100:
  #PUT data in S3
  object = s3.Object(constants.S3bucket, 'filename' + str(i) + '.txt')
- object.put(Body="some generated data for filename" + str(i))
+ object.put(Body="This is some generated data for filename" + str(i) + '.txt')
  #Cache the data [ KEY = bucket:filenameX.txt]
- r.set(constants.S3bucket + ':filename' + str(i) + '.txt', 'some generated data for filename' + str(i))
+ r.set(constants.S3bucket + ':filename' + str(i) + '.txt', 'This is some generated data for filename' + str(i) + '.txt')
  i += 1
 
 print("Data loaded successfully!")
