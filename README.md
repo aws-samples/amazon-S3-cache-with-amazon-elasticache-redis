@@ -16,8 +16,12 @@ These examples are also referenced in the following blog:TBD which provide backg
 
 2. Within the AWS Cloud9 environment, open (+) a new terminal and clone this repository:
 
-   ```git clone git@github.com:aws-samples/amazon-S3-cache-with-amazon-elasticache-redis.git``` 
-
+   ``` (ssh) 
+       git clone git@github.com:aws-samples/amazon-S3-cache-with-amazon-elasticache-redis.git 
+       
+       (https)
+       git clone https://github.com/aws-samples/amazon-S3-cache-with-amazon-elasticache-redis.git 
+   ``` 
 3. Navigate to the downloaded setup directory (/amazon-S3-cache-with-amazon-elasticache-redis/setup) and run the following script to further prepare your environment:
  
    ```sh s3_redis_project_setup.sh  ```
