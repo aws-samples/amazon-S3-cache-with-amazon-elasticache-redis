@@ -16,7 +16,8 @@ These examples are also referenced in the following blog:TBD which provide backg
 
 2. Within the AWS Cloud9 environment, open (+) a new terminal and clone this repository:
 
-   ``` (ssh) 
+   ``` 
+       (ssh) 
        git clone git@github.com:aws-samples/amazon-S3-cache-with-amazon-elasticache-redis.git 
        
        (https)
