@@ -25,7 +25,10 @@ These examples are also referenced in the following blog:TBD which provide backg
    ``` 
 3. Navigate to the downloaded setup directory (/amazon-S3-cache-with-amazon-elasticache-redis/setup) and run the following script to further prepare your environment:
  
-   ```sh s3_redis_project_setup.sh  ```
+   ```
+       cd amazon-S3-cache-with-amazon-elasticache-redis/setup
+       sh s3_redis_project_setup.sh  
+   ```
 
  4. Navigate to the resources directory (amazon-S3-cache-with-amazon-elasticache-redis/resources) and update the following properties within **constants.py**. Provide the generated resource values you captured in the cloudformation outputs: 
 
@@ -33,11 +36,11 @@ These examples are also referenced in the following blog:TBD which provide backg
       redishost="" (leave out the port)
       S3bucket= "" 
    ```
- 5. Next run **load_data.py**. This will generate and load 100 objects into both Amazon S3 and Amazon ElastiCache for Redis
+ 5. Next right click on and run **load_data.py**. This will generate and load 100 objects into both Amazon S3 and Amazon ElastiCache for Redis
 
- 6. Next run **query_redis.py** and **query_S3.py** and compare the generated latency in microseconds. 
+ 6. Next right click on and run **query_redis.py** and **query_S3.py** . Then compare the generated latency (in microseconds) output. 
 
- You will notice a significant performance improvement when querying redis vs S3. This performance test is intended to be lightweight and only for illustration purposes. Your results may slightly vary based on your environment. An example comparison between the two services in milliseconds is as follows: 
+ You will notice a significant performance improvement when querying redis vs S3. This performance test is intended to be lightweight and only for illustration purposes. Your results may slightly vary based on your environment. An example comparison between the two services converted in milliseconds is as follows: 
 
  ![latency](images/latency.jpg)
 
@@ -45,16 +48,16 @@ These examples are also referenced in the following blog:TBD which provide backg
 
 A common caching technique often used is lazy loading. This approach assumes data is cached and if not, retrieves data from the origin data source, then caches the data future requests. In order to illustrate this example we must first flush the redis cache.
 
-1. run **flush_redis.py** (this deletes all your keys)
+1. Next right click on and run **flush_redis.py** (this deletes all your keys)
 
-2. Next run **lazy_load.py** found within the following directory (amazon-S3-cache-with-amazon-elasticache-redis/examples/lazyload). Upon first run, you will notice a cache MISS because the object was not initially cached in redis. Run the script again and you will now notice a cache HIT since the object was set into redis after the initial cache miss. 
+2. Next right click on and run **lazy_load.py** found within the following directory (amazon-S3-cache-with-amazon-elasticache-redis/examples/lazyload). Upon first run, you will notice a cache miss because the object was not initially cached in redis. Run the script again and you will now notice a cache hit since the object was set into redis after the initial cache miss. 
 
 ## Terminate your environment
 
 Upon running these examples, terminate your environment by the following steps:
 
-1. run **delete_S3_objects.py** within the (amazon-S3-cache-with-amazon-elasticache-redis/resources) directory. Thsi will delete all your generated S3 Objects.
+1. Next right click on and run **delete_S3_objects.py** within the (amazon-S3-cache-with-amazon-elasticache-redis/resources) directory. This will delete all your generated S3 Objects.
 
-2. Within the AWS CloudFormation console, delete the stack you launched. 
+2. Next, within the AWS CloudFormation console, delete the stack you launched. 
  
 
