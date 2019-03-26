@@ -2,7 +2,7 @@
 
 This sample project demonstrates how you can cache [Amazon S3](https://aws.amazon.com/s3/) objects with [Amazon ElastiCache for Redis](https://aws.amazon.com/elasticache/redis/) . This project also uses [AWS CloudFormation](https://aws.amazon.com/cloudformation/) & [AWS Cloud9](https://aws.amazon.com/cloud9/) as means to deploy, build and run this tutorial, although you can run this in your own environments as well.
 
-These examples are also referenced in the following blog:TBD which provide background and context to this project. It is recommended to read the blog as a prerequisite.
+These examples are also referenced in the following [blog](https://aws.amazon.com/blogs/storage/turbocharge-amazon-s3-with-amazon-elasticache-for-redis/) which provide background and context to this project. It is recommended to read the blog as a prerequisite.
 
 ## Deployment
 
